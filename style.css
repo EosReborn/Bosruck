@@ -260,3 +260,11 @@ nav a{padding:.4rem 0;display:inline-block}
 .burger[aria-expanded=true] .l2{opacity:0}
 .burger[aria-expanded=true] .l3{transform:translateY(-6px) rotate(-45deg)}
 @media(max-width:900px){.burger{display:flex;margin-left:auto}}
+/* Navigation: vertikal zentrieren, schlanker Reservieren-Button */
+nav ul{align-items:center}
+nav li{display:flex;align-items:center}
+@media(min-width:901px){
+ header .btn{min-height:0;line-height:1.2;padding:.6rem 1.3rem!important;font-size:.92rem;margin-left:.4rem}
+ nav a:not(.btn){padding:.5rem 0}
+}
+@media(max-width:900px){nav li{display:block}}
