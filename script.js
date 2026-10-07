@@ -50,3 +50,7 @@ document.querySelectorAll('#menu a').forEach(a=>a.addEventListener('click',()=>d
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 document.getElementById('yr').textContent=new Date().getFullYear();
+
+// Click-to-load: Karte & Video (DSGVO)
+document.querySelectorAll('.mapload button').forEach(btn=>btn.addEventListener('click',e=>{if(e.target.closest('a'))return;const w=btn.parentElement;w.innerHTML='<iframe title="Karte Bosruckhütte" src="'+w.dataset.src+'" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:100%;min-height:420px;border:0"></iframe>';}));
+document.querySelectorAll('.video button').forEach(btn=>btn.addEventListener('click',()=>{const w=btn.parentElement;w.innerHTML='<iframe title="Video: Bosruckhütte" src="https://www.youtube-nocookie.com/embed/'+w.dataset.yt+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0"></iframe>';}));

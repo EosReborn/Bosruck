@@ -168,3 +168,44 @@ nav a.cur{color:#f2b36b;opacity:1}
 .teaser p{color:var(--muted);font-size:.95rem}
 .teaser b{font-family:Fraunces,serif;font-size:1.25rem;color:var(--forest)}
 @media(max-width:900px){.teaser{grid-template-columns:1fr 1fr}.page-hero{padding:120px 0 50px}}
+
+@font-face{font-family:Inter;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-weight:500;font-display:swap;src:url(fonts/fraunces-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Fraunces;font-weight:700;font-display:swap;src:url(fonts/fraunces-latin-700-normal.woff2) format("woff2")}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--forest);padding:.6rem 1rem;border-radius:8px;z-index:200}
+.skip:focus{left:12px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.narrow{width:min(820px,100% - 40px)}
+.prose h2{font-size:1.5rem;margin:2rem 0 .5rem}
+.prose p{margin:.5rem 0;color:var(--ink)}
+.prose a{color:var(--accent)}
+.todo{background:#fff3cd;color:#7a5b00;padding:.05rem .4rem;border-radius:4px;font-size:.9em}
+.video,.mapload{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:1.6rem;background:linear-gradient(135deg,var(--forest),var(--forest-2))}
+.mapload{aspect-ratio:auto;min-height:420px;margin-top:0}
+.video button,.mapload button{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:#fff;text-align:center;padding:1.5rem;font-weight:600}
+.video button:focus-visible,.mapload button:focus-visible{outline:3px solid var(--accent);outline-offset:-6px}
+.play{display:grid;place-items:center;width:72px;height:72px;border-radius:50%;background:var(--accent);font-size:1.6rem}
+.video small,.mapload small{font-weight:400;opacity:.85;max-width:44ch;font-size:.85rem}
+.mapload small a{color:#f2b36b}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.4rem;margin-bottom:12px}
+.faq summary{cursor:pointer;font-weight:600;color:var(--forest);list-style:none;display:flex;justify-content:space-between;gap:1rem}
+.faq summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin-top:.7rem;color:var(--muted)}
+@media print{header,.skip,.lb,.burger,nav{display:none!important}body{background:#fff}section{padding:24px 0}.reveal{opacity:1!important;transform:none!important}}
+.fl{display:inline-flex;align-items:center;gap:.6rem;flex-wrap:wrap}.soc{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.1);color:#f2b36b!important;transition:.2s}.soc:hover{background:#f2b36b;color:#14261e!important}
+
+.credit{display:flex;align-items:center;gap:1.1rem;margin-top:26px;padding:1.1rem 1.4rem;border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+.credit img{width:44px;height:44px;flex:none}
+.ctext{display:flex;flex-direction:column;line-height:1.35;min-width:0}
+.ctext small{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:#8fa296}
+.ctext b{font-family:Fraunces,Georgia,serif;font-weight:500;font-size:1.2rem;color:#fff}
+.ctext span{font-size:.88rem;color:#b8c4bb}
+.clink{margin-left:auto;text-decoration:none;color:#f2b36b!important;font-weight:500;white-space:nowrap;transition:.2s}
+.clink:hover{color:#fff!important}
+.clink span{display:inline-block;transition:.2s}.clink:hover span{transform:translateX(4px)}
+@media(max-width:700px){.credit{flex-wrap:wrap}.clink{margin-left:0;white-space:normal}}
+@media print{.credit{display:none}}
+footer .wrap.cw{display:block}

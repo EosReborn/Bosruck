@@ -1,0 +1,17 @@
+{
+  "name": "Bosruckhütte",
+  "short_name": "Bosruckhütte",
+  "lang": "de-AT",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#fbf8f2",
+  "theme_color": "#1f3a2e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
