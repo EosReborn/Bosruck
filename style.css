@@ -268,3 +268,9 @@ nav li{display:flex;align-items:center}
  nav a:not(.btn){padding:.5rem 0}
 }
 @media(max-width:900px){nav li{display:block}}
+
+/* Hamburger: fest am rechten Rand (unabhängig von Flex-Verhalten) */
+@media(max-width:900px){
+ header .nav{position:relative}
+ .burger{position:absolute!important;right:-8px;top:12px;margin:0!important}
+}
