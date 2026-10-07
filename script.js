@@ -54,3 +54,17 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 // Click-to-load: Karte & Video (DSGVO)
 document.querySelectorAll('.mapload button').forEach(btn=>btn.addEventListener('click',e=>{if(e.target.closest('a'))return;const w=btn.parentElement;w.innerHTML='<iframe title="Karte Bosruckhütte" src="'+w.dataset.src+'" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:100%;min-height:420px;border:0"></iframe>';}));
 document.querySelectorAll('.video button').forEach(btn=>btn.addEventListener('click',()=>{const w=btn.parentElement;w.innerHTML='<iframe title="Video: Bosruckhütte" src="https://www.youtube-nocookie.com/embed/'+w.dataset.yt+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen style="width:100%;height:100%;border:0"></iframe>';}));
+
+// Cookie-Hinweis (nur Einwilligung für externe Medien)
+(function(){
+  var K='bosruck-consent',cc=document.getElementById('cc');if(!cc)return;
+  function get(){try{return localStorage.getItem(K)}catch(e){return null}}
+  function set(v){try{localStorage.setItem(K,v)}catch(e){}}
+  function show(){cc.hidden=false;var b=cc.querySelector('button');}
+  function hide(){cc.hidden=true}
+  function loadEmbeds(){document.querySelectorAll('.mapload button,.video button').forEach(function(x){x.click()})}
+  var v=get();if(!v)show();else if(v==='all')loadEmbeds();
+  cc.addEventListener('click',function(e){var t=e.target.closest('[data-cc]');if(!t)return;var c=t.dataset.cc;set(c);hide();if(c==='all')loadEmbeds();});
+  document.addEventListener('click',function(e){if(e.target.closest('[data-cc-open]'))show();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!cc.hidden&&get())hide();});
+})();
